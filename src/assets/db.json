@@ -1,0 +1,18 @@
+[
+  {
+    "ID" : "User ID",
+    "Label":"User ID",
+    "Type": "input",
+    "value": "",
+    "Required": true
+  },
+  {
+    "ID" : "Password",
+    "Label":"Password",
+    "Type": "input",
+    "value": "",
+    "Required": true
+  }
+  
+  
+]
