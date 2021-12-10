@@ -1,5 +1,8 @@
 [
   {
+    "bannerImage": "../assets/images/banner-prikshadgca.jpg"
+  },
+  {
     "ID" : "User ID",
     "Label":"User ID",
     "Type": "input",

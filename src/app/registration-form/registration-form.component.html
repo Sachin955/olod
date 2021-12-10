@@ -1,59 +1,83 @@
-<div class="container">
-  <div class="row heading">
-    <h3>Login</h3>
+<div>
+  <img src={{bannerImage}} alt="" class="banner" />
+</div>
+<div class="d-flex">
+  <div class="parent">
+    <div class="list-items" *ngFor="let items of listItems">
+      <a href="" class="listAnchor active">
+        {{ items }}
+      </a>
+    </div>
   </div>
-  <section>
-    <form class="registration_form" [formGroup]="registrationForm">
-      <div class="row">
-        <div class="col-md-12" *ngFor="let control of dynamicFormArray">
-          <div [ngSwitch]="control.Type" class="space">
-            <div *ngSwitchCase="'input'">
-              {{ control.Label }}
-              <input
-                type="text"
-                class="form-control"
-                formControlName="{{ control.ID }}"
-              />
+  <div class="hello">
+    <div class="container">
+      <div class="row heading">
+        <h3>Officer Login</h3>
+      </div>
+      <section>
+        <form class="registration_form" [formGroup]="registrationForm">
+          <div class="row">
+            <div class="col-md-12" *ngFor="let control of dynamicFormArray">
+              <div [ngSwitch]="control.Type" class="space">
+                <div *ngSwitchCase="'input'">
+                  {{ control.Label }}
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="{{ control.ID }}"
+                  />
 
-              <div *ngIf="registrationForm.get(control.ID).dirty || registrationForm.get(control.ID).touched">
-                <small *ngIf="!registrationForm.get(control).valid"></small>
-                {{control.Label}} is required
+                  <div
+                    class="validations"
+                    *ngIf="
+                      registrationForm.get(control.ID).dirty ||
+                      registrationForm.get(control.ID).touched
+                    "
+                  >
+                    <div *ngIf="!registrationForm.get(control.ID).valid"></div>
+                    {{ control.Label }} is required
+                  </div>
+                </div>
               </div>
             </div>
-
-            
-           
-            
           </div>
-        </div>
-      </div>
-      <p class="heading_captcha">Captcha</p>
-      <div class="captcha_Box">
-        <div class="randomNumber">
-          {{ captchaValueOne }} + {{ captchaValueTwo }}
-        </div>
-        <div>
-          <input
-            type="text"
-            placeholder="solution"
-            class="input_captcha"
-            formControlName="inputCaptcha"
-          />
-          <img
-            src="../../assets/images/captcha.png"
-            class="image_Captcha"
-            (click)="captcha_click()"
-          />
-        </div>
 
-        <button
-          type="submit"
-          class="btn-outline-success btn-lg"
-          (click)="submitHandler(registrationForm)"
-        >
-          Submit
-        </button>
-      </div>
-    </form>
-  </section>
+          <div>
+            <a href="#">Forget Password</a>
+          </div>
+
+          <p class="heading_captcha">Captcha</p>
+          <div class="captcha_Box">
+            <div class="randomNumber">
+              {{ captchaValueOne }} + {{ captchaValueTwo }}
+            </div>
+            <div>
+              <input
+                type="text"
+                placeholder="solution"
+                class="input_captcha"
+                formControlName="inputCaptcha"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title="Enter Captcha Value"
+              />
+              <img
+                src="../../assets/images/captcha.png"
+                class="image_Captcha"
+                (click)="captcha_click()"
+              />
+            </div>
+
+            <button
+              type="submit"
+              class="submitBtn btn-lg"
+              (click)="submitHandler(registrationForm)"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </div>
 </div>

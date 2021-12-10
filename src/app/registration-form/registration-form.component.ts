@@ -13,18 +13,22 @@ export class RegistrationFormComponent implements OnInit {
   captchaValueTwo: any = Math.floor(Math.random() * 10);
   registrationForm: any;
   totalValue_captcha: any;
+  listItems:Array<string>=[
+    'Home','About Us', 'HelpDesk','Suggestions','FAQs','Contact Us','USER MANUAL','Examinations', 'Operator Login',
+    'Officer Login'
+  ]
+  bannerImage:any="../../assets/images/banner-prikshadgca.jpg"
   constructor(private httpClient: HttpClient, private _fb: FormBuilder) {}
 
   ngOnInit() {
     this.registrationForm = this._fb.group({
-   
       inputCaptcha: [],
     });
 
     this.httpClient.get('/assets/db.json').subscribe((data) => {
       this.dynamicFormArray = data;
-      console.log(this.dynamicFormArray);
-      this.formControl()
+      console.log(this.dynamicFormArray)
+      this.formControl();
     });
   }
 
@@ -34,7 +38,9 @@ export class RegistrationFormComponent implements OnInit {
   }
 
   submitHandler(registrationForm: any) {
+ 
     this.totalValue_captcha = this.captchaValueOne + this.captchaValueTwo;
+    
     if (
       this.totalValue_captcha ===
       Number(registrationForm.controls.inputCaptcha.value)
@@ -47,15 +53,17 @@ export class RegistrationFormComponent implements OnInit {
     }
   }
 
- formControl(){
-  this.dynamicFormArray.forEach((element:any)=>{
-    if(element.Required === true){
-      this.registrationForm.addControl(element.ID, new FormControl("",Validators.required))
-    }else {
-      this.registrationForm.addControl(element.ID, new FormControl(''))
-    }
-    console.log(this.registrationForm)
-  
-  })
- }
+  formControl() {
+    this.dynamicFormArray.forEach((element: any) => {
+      if (element.Required === true) {
+        this.registrationForm.addControl(
+          element.ID,
+          new FormControl('', Validators.required)
+        );
+      } else {
+        this.registrationForm.addControl(element.ID, new FormControl(''));
+      }
+      console.log(this.registrationForm)
+    });
+  }
 }

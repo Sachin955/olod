@@ -1,69 +1,114 @@
 .container {
-    border: 1px solid lightgray;
-    border-radius: 5px;
-    /* padding: 5px; */
-    margin-top: 100px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  /* padding: 5px; */
+  margin-top: 100px;
 }
-.heading {
-    text-align: center;
-   
-    background-color: green;
-    padding: 2px 0 2px 0;
-    border-radius:   4px 0px 0px;
-    color: white;
+.banner {
+  width: 100%;
+  height: 200px;
+}
 
+.list-items {
+  background-color: gray;
+  padding-bottom: 10px;
+  width: 265px;
+  line-height: 40px;
+  cursor: pointer;
+  border-radius: 3px;
+  border: 1px solid white;
+}
+.list-items:hover {
+  background-color: skyblue;
+}
+
+.parent {
+  flex-direction: row;
+  margin-right: 200px;
+}
+.hello {
+  width: 62%;
+}
+
+.listAnchor {
+  color: white;
+  text-decoration: none;
+  padding-left: 10px;
+}
+
+.heading {
+  text-align: center;
+  background-color: skyblue;
+  padding: 2px 0 2px 0;
+  border-radius: 4px 0px 0px;
+  color: white;
 }
 
 .registration_form {
-    margin-top: 30px;  
+  margin-top: 30px;
 }
 
 .space {
-    margin: 10px 0 10px 0;
-    font-weight: bold;
+  margin: 10px 0 10px 0;
+  font-weight: bold;
 }
 
 .image_Captcha {
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    margin-right: 100px;
-
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  margin-right: 100px;
 }
 
 .bg_captcha {
-    background-color: green;
-    width: 80px;
-    text-align: center;
-    border-radius: 3px;
-
+  background-color: skyblue;
+  width: 80px;
+  text-align: center;
+  border-radius: 3px;
 }
 
 .heading_captcha {
-    font-weight: bold;
-    padding: 0;
-    margin-top: 20px;
+  font-weight: bold;
+  padding: 0;
+  margin-top: 20px;
 }
 .randomNumber {
-    border-radius: 4px;
-    background-color: green;
-    padding:10px;
-    text-align: center;
-    width: 80px;
-    margin-right: 20px;
-    color: white;
-} 
+  border-radius: 4px;
+  background-color: skyblue;
+  padding: 10px;
+  text-align: center;
+  width: 80px;
+  margin-right: 20px;
+  color: white;
+  font-size: large;
+}
 
 .captcha_Box {
-    display: flex;  
-    margin-bottom: 10px;
+  display: flex;
+  margin-bottom: 10px;
+  font-size: larger;
+  font-weight: bold;
 }
 
 .input_captcha {
-    width: 100px;
-    height: 40px;
+  width: 100px;
+  height: 40px;
+  
 }
 
+.validations {
+  color: red;
+  font-size: small;
+}
 
+.submitBtn {
+  background-color: skyblue;
+  color: white;
 
-
+}
+.submitBtn:hover {
+  background-color: skyblue;
+  color: white;
+  border: none;
+  
+}
