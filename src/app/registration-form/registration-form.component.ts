@@ -28,7 +28,7 @@ export class RegistrationFormComponent implements OnInit {
     this.httpClient.get('/assets/db.json').subscribe((data) => {
       this.dynamicFormArray = data;
       console.log(this.dynamicFormArray)
-      this.formControl();
+      this.registrationFormControl();
     });
   }
 
@@ -53,7 +53,7 @@ export class RegistrationFormComponent implements OnInit {
     }
   }
 
-  formControl() {
+  registrationFormControl() {
     this.dynamicFormArray.forEach((element: any) => {
       if (element.Required === true) {
         this.registrationForm.addControl(

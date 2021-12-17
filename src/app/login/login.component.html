@@ -1,0 +1,35 @@
+<div class="container">
+  <form class="loginForm" [formGroup]="loginForm">
+    <div *ngFor="let control of apiCall">
+      <div [ngSwitch]="control.Groups.Component_Label">
+        <div *ngSwitchCase="'select'" formControlName="Component_Label">
+          <label>asdfas</label>
+          <select name="" id="" >
+            <option value="volvo">Volvo</option>
+          </select>
+          <!-- <input type="select" formControlName="Component_Type" /> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- <div formArrayName="Group_newRegistration">
+      <div
+        *ngFor="
+          let group of newCandidateRegistrationArray.controls;
+          let i = index
+        "
+        [formGroupName]="i"
+      >
+        <div formControlName="Component_Label">
+          <label>Title</label>
+        </div>
+        <select name="cars" id="cars" formControlName="Component_Type">
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </select>
+      </div>
+    </div> -->
+  </form>
+</div>
