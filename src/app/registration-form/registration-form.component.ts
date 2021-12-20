@@ -8,10 +8,10 @@ import { FormBuilder, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./registration-form.component.css'],
 })
 export class RegistrationFormComponent implements OnInit {
-  dynamicFormArray: any;
+  responseData: any;
   captchaValueOne: any = Math.floor(Math.random() * 10);
   captchaValueTwo: any = Math.floor(Math.random() * 10);
-  registrationForm: any;
+  allInputControls: any;
   totalValue_captcha: any;
   listItems:Array<string>=[
     'Home','About Us', 'HelpDesk','Suggestions','FAQs','Contact Us','USER MANUAL','Examinations', 'Operator Login',
@@ -21,13 +21,13 @@ export class RegistrationFormComponent implements OnInit {
   constructor(private httpClient: HttpClient, private _fb: FormBuilder) {}
 
   ngOnInit() {
-    this.registrationForm = this._fb.group({
+    this.allInputControls = this._fb.group({
       inputCaptcha: [],
     });
 
     this.httpClient.get('/assets/db.json').subscribe((data) => {
-      this.dynamicFormArray = data;
-      console.log(this.dynamicFormArray)
+      this.responseData = data;
+      console.log(this.responseData)
       this.registrationFormControl();
     });
   }
@@ -37,16 +37,16 @@ export class RegistrationFormComponent implements OnInit {
     this.captchaValueTwo = Math.floor(Math.random() * 10);
   }
 
-  submitHandler(registrationForm: any) {
+  submitHandler(allInputControls: any) {
  
     this.totalValue_captcha = this.captchaValueOne + this.captchaValueTwo;
     
     if (
       this.totalValue_captcha ===
-      Number(registrationForm.controls.inputCaptcha.value)
+      Number(allInputControls.controls.inputCaptcha.value)
     ) {
       alert('Login Successful');
-    } else if (registrationForm.controls.inputCaptcha.value === Number('')) {
+    } else if (allInputControls.controls.inputCaptcha.value === Number('')) {
       alert('Enter Captcha value');
     } else {
       alert('Wrong Captcha Value');
@@ -54,16 +54,16 @@ export class RegistrationFormComponent implements OnInit {
   }
 
   registrationFormControl() {
-    this.dynamicFormArray.forEach((element: any) => {
+    this.responseData.forEach((element: any) => {
       if (element.Required === true) {
-        this.registrationForm.addControl(
+        this.allInputControls.addControl(
           element.ID,
           new FormControl('', Validators.required)
         );
       } else {
-        this.registrationForm.addControl(element.ID, new FormControl(''));
+        this.allInputControls.addControl(element.ID, new FormControl(''));
       }
-      console.log(this.registrationForm)
+      console.log(this.allInputControls)
     });
   }
 }

@@ -15,9 +15,9 @@
         <h3>Officer Login</h3>
       </div>
       <section>
-        <form class="registration_form" [formGroup]="registrationForm">
+        <form class="registration_form" [formGroup]="allInputControls">
           <div class="row">
-            <div class="col-md-12" *ngFor="let control of dynamicFormArray">
+            <div class="col-md-12" *ngFor="let control of responseData">
               <div [ngSwitch]="control.Type" class="space">
                 <div *ngSwitchCase="'input'">
                   {{ control.Label }}
@@ -30,11 +30,11 @@
                   <div
                     class="validations"
                     *ngIf="
-                      registrationForm.get(control.ID).dirty ||
-                      registrationForm.get(control.ID).touched
+                      allInputControls.get(control.ID).dirty ||
+                      allInputControls.get(control.ID).touched
                     "
                   >
-                    <div *ngIf="!registrationForm.get(control.ID).valid"></div>
+                    <div *ngIf="!allInputControls.get(control.ID).valid"></div>
                     {{ control.Label }} is required
                   </div>
                 </div>
@@ -71,7 +71,8 @@
             <button
               type="submit"
               class="submitBtn btn-lg"
-              (click)="submitHandler(registrationForm)"
+              (click)="submitHandler(allInputControls)"
+              routerLink="/registration"
             >
               Submit
             </button>
