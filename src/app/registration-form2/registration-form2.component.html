@@ -1,0 +1,146 @@
+<div class="container">
+  <div class="form-title">
+    <h3>{{ formTitle }}</h3>
+  </div>
+  <br />
+
+  <form id="myForm2" [formGroup]="registrationForm">
+    <div class="row form">
+      <div class="col-md-12" *ngFor="let control of dbData">
+        <div [ngSwitch]="control.Type">
+          <div *ngSwitchCase="'input'">
+            <div class="">
+              <label
+                ><h6>*{{ control.Label }}</h6></label
+              >
+            </div>
+            <div class="">
+              <input
+                type="text"
+                class="form-control"
+                [formControlName]="control.ID"
+              />
+            </div>
+            
+            <div
+              *ngIf="
+                registrationForm.get(control.ID).dirty ||
+                registrationForm.get(control.ID).touched
+              "
+            >
+              <small *ngIf="!registrationForm.get(control.ID).valid">
+                {{ control.Label }} is required
+              </small>
+            </div>
+          </div>
+
+          <div *ngSwitchCase="'password'">
+            <div class="">
+              <label
+                ><h6>{{ control.Label }}</h6></label
+              >
+            </div>
+            <div class="">
+              <input
+                type="password"
+                class="form-control"
+                formControlName="password"
+                [formControlName]="control.ID"
+              />
+            </div>
+            <div
+              *ngIf="
+                registrationForm.get(control.ID).dirty ||
+                registrationForm.get(control.ID).touched
+              "
+            >
+              <small *ngIf="!registrationForm.get(control.ID).valid">
+                {{ control.Label }} is required
+              </small>
+            </div>
+          </div>
+
+          <div *ngSwitchCase="'date'">
+            <div class="">
+              <label
+                ><h6>{{ control.Label }}</h6></label
+              >
+            </div>
+            <div class="">
+              <input
+                type="date"
+                class="form-control"
+                [formControlName]="control.ID"
+              />
+            </div>
+
+            
+            <div
+              *ngIf="
+                registrationForm.get(control.ID).dirty ||
+                registrationForm.get(control.ID).touched
+              "
+            >
+              <small *ngIf="!registrationForm.get(control.ID).valid">
+                {{ control.Label }} is required
+              </small>
+            </div>
+          
+        </div>
+
+          <div *ngSwitchCase="'radio'">
+            <div class="">
+              <label
+                ><h6>{{ control.Label }}</h6></label
+              >
+            </div>
+            <div class="">
+              <label *ngFor="let val of control.value.split(',')">
+                <input
+                  type="radio"
+                  name="{{ control.ID }}"
+                  value="{{ val }}"
+                  [formControlName]="control.ID"
+                />
+                {{ val }}
+              </label>
+            </div>
+          </div>
+
+          <div *ngSwitchCase="'select'">
+            <div class="">
+              <label
+                ><h6>{{ control.Label }}</h6></label
+              >
+            </div>
+            <div class="">
+              <select class="form-control" [formControlName]="control.ID">
+                <option
+                  *ngFor="let val of control.value.split(',')"
+                  value="{{ val }}"
+                >
+                  {{ val }}
+                </option>
+              </select>
+              <div
+                *ngIf="
+                  registrationForm.get(control.ID).dirty ||
+                  registrationForm.get(control.ID).touched
+                "
+              >
+                <small *ngIf="!registrationForm.get(control.ID).valid">
+                  {{ control.Label }} is required
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <button type="submit" [disabled]="!registrationForm.valid" (click)="registrationSubmit()" class="submit-btn" >Submit</button>
+    </div>
+  </form>
+  
+</div>

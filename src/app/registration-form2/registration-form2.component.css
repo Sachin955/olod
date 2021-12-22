@@ -1,0 +1,26 @@
+.container {
+    border: 1px solid skyblue;
+    margin-top: 20px;
+    padding: 40px;
+    border-radius: 5px;
+}
+.form-title{
+    text-align: center;
+    padding: 3px 0 3px 0;
+    background-color: skyblue;
+    border-radius: 3px;
+    color: white;
+    margin-top: 40px;
+}
+.submit-btn {
+    padding: 3px 0 3px 0;
+    background-color: skyblue;
+    color: white;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size:larger;
+}
+small {
+    color: red;
+}
+

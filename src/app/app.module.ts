@@ -7,20 +7,23 @@ import { RegistrationFormComponent } from './registration-form/registration-form
 import { CaptchaComponent } from './captcha/captcha.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
+import { RegistrationForm2Component } from './registration-form2/registration-form2.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationFormComponent,
     CaptchaComponent,
-    LoginComponent
+    LoginComponent,
+    RegistrationForm2Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     ReactiveFormsModule,
-    FormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

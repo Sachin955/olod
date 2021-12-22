@@ -104,11 +104,14 @@
 .submitBtn {
   background-color: skyblue;
   color: white;
+  
 
 }
 .submitBtn:hover {
   background-color: skyblue;
   color: white;
-  border: none;
+ 
+
+  
   
 }

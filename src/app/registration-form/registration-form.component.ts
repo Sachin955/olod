@@ -37,7 +37,7 @@ export class RegistrationFormComponent implements OnInit {
     this.captchaValueTwo = Math.floor(Math.random() * 10);
   }
 
-  submitHandler(allInputControls: any) {
+  submitHandler(allInputControls:any,  ) {
  
     this.totalValue_captcha = this.captchaValueOne + this.captchaValueTwo;
     
@@ -50,6 +50,8 @@ export class RegistrationFormComponent implements OnInit {
       alert('Enter Captcha value');
     } else {
       alert('Wrong Captcha Value');
+     
+
     }
   }
 

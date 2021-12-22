@@ -3,19 +3,62 @@
     "bannerImage": "../assets/images/banner-prikshadgca.jpg"
   },
   {
-    "ID" : "User ID",
-    "Label":"User ID",
+   
+    "ID": "Name",
+    "Label": "Name",
     "Type": "input",
     "value": "",
     "Required": true
   },
   {
-    "ID" : "Password",
-    "Label":"Password",
+    
+    "ID": "Password",
+    "Label": "Password",
+    "Type": "password",
+    "value": "",
+    "Required": true
+  },
+  {
+    
+    "ID": "Contact No",
+    "Label": "Contact No",
     "Type": "input",
     "value": "",
     "Required": true
+  },
+  {
+    "ID": "Email Id",
+    "Label": "Email Id",
+    "Type": "input",
+    "value": "",
+    "Required": true
+  },
+  {
+    "ID": "DOB",
+    "Label": "DOB",
+    "Type": "date",
+    "value": "Maharashtra,Rajasthan,Gujrat,Madhya Pradesh",
+    "Required": true
+  },
+  {
+    "ID": "Gender",
+    "Label": "Gender",
+    "Type": "radio",
+    "value": "Male,Female",
+    "Required": true
+  },
+  {
+    "ID": "City",
+    "Label": "City",
+    "Type": "select",
+    "value": "Mumbai,Pune,Delhi,Jaipur,Surat,Bhopal",
+    "Required": true
+  },
+  {
+    "ID": "State",
+    "Label": "State",
+    "Type": "select",
+    "value": "Bhopal,Jaipur,Delhi,,Surat,Pune",
+    "Required": true
   }
-  
-  
 ]

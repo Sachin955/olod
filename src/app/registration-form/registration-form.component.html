@@ -34,7 +34,7 @@
                       allInputControls.get(control.ID).touched
                     "
                   >
-                    <div *ngIf="!allInputControls.get(control.ID).valid"></div>
+                  
                     {{ control.Label }} is required
                   </div>
                 </div>
@@ -72,7 +72,8 @@
               type="submit"
               class="submitBtn btn-lg"
               (click)="submitHandler(allInputControls)"
-              routerLink="/registration"
+            
+              routerLink="/registrationForm"
             >
               Submit
             </button>
@@ -81,4 +82,6 @@
       </section>
     </div>
   </div>
+
+  
 </div>

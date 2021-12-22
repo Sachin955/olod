@@ -1,0 +1,549 @@
+{
+    "FP_ID": 48,
+    "Action": "Insert",
+    "Groups": [
+        {
+            "Component": [
+                {
+                    "Hide_Id": "0",
+                    "Show_Id": "0",
+                    "Labelling": "Y",
+                    "Component_Size": "15",
+                    "Component_Type": "select",
+                    "Component_Align": "Left",
+                    "Component_Label": "Title",
+                    "component_value": "",
+                    "Label_Display_name": " Title",
+                    "Component_Font_Size": 14,
+                    "Component_Help_Text": "Select Title",
+                    "Component_Mandatory": 1,
+                    "Component_Read_Only": 0,
+                    "Component_Is_Visible": 1,
+                    "Component_List_values": 7,
+                    "Component_Compare_With": "0",
+                    "Component_Condition_Type": null,
+                    "Component_Compare_Message": "0",
+                    "group_component_mapping_ID": 125,
+                    "Component_Compare_Condition": null,
+                    "Component_Condition_Perform_On": "0"
+                },
+                {
+                    "Hide_Id": "0",
+                    "Show_Id": "0",
+                    "Labelling": "Y",
+                    "Component_Size": "35",
+                    "Component_Type": "text",
+                    "Component_Align": "Left",
+                    "Component_Label": "First_Name",
+                    "component_value": "",
+                    "Label_Display_name": "First Name",
+                    "Component_Font_Size": 14,
+                    "Component_Help_Text": "Enter First Name as per 10th certificate.",
+                    "Component_Mandatory": 1,
+                    "Component_Read_Only": 0,
+                    "Component_Is_Visible": 1,
+                    "Component_List_values": 1,
+                    "Component_Compare_With": "0",
+                    "Component_Condition_Type": [
+                        {
+                            "id": [
+                                "uppercase",
+                                "118",
+                                "data",
+                                "data",
+                                "1",
+                                "==",
+                                "data",
+                                "data",
+                                "1",
+                                "component",
+                                "data",
+                                "this",
+                                "0",
+                                "",
+                                null
+                            ]
+                        },
+                        {
+                            "id": [
+                                "alphabate",
+                                "118",
+                                "data",
+                                "data",
+                                "1",
+                                "==",
+                                "data",
+                                "data",
+                                "1",
+                                "component",
+                                "data",
+                                "this",
+                                "0",
+                                "",
+                                null
+                            ]
+                        }
+                    ],
+                    "Component_Compare_Message": "0",
+                    "group_component_mapping_ID": 118,
+                    "Component_Compare_Condition": null,
+                    "Component_Condition_Perform_On": "0"
+                },
+                {
+                    "Hide_Id": "0",
+                    "Show_Id": "0",
+                    "Labelling": "Y",
+                    "Component_Size": "25",
+                    "Component_Type": "text",
+                    "Component_Align": "Left",
+                    "Component_Label": "Middle_Name",
+                    "component_value": "",
+                    "Label_Display_name": "Middle Name",
+                    "Component_Font_Size": 14,
+                    "Component_Help_Text": "Enter Middle Name as per 10th certificate.",
+                    "Component_Mandatory": 0,
+                    "Component_Read_Only": 0,
+                    "Component_Is_Visible": 1,
+                    "Component_List_values": 1,
+                    "Component_Compare_With": "0",
+                    "Component_Condition_Type": [
+                        {
+                            "id": [
+                                "uppercase",
+                                "121",
+                                "data",
+                                "data",
+                                "1",
+                                "==",
+                                "data",
+                                "data",
+                                "1",
+                                "component",
+                                "data",
+                                "this",
+                                "0",
+                                "",
+                                null
+                            ]
+                        },
+                        {
+                            "id": [
+                                "alphabate",
+                                "121",
+                                "data",
+                                "data",
+                                "1",
+                                "==",
+                                "data",
+                                "data",
+                                "1",
+                                "component",
+                                "data",
+                                "this",
+                                "0",
+                                "",
+                                null
+                            ]
+                        }
+                    ],
+                    "Component_Compare_Message": "0",
+                    "group_component_mapping_ID": 121,
+                    "Component_Compare_Condition": null,
+                    "Component_Condition_Perform_On": "0"
+                },
+                {
+                    "Hide_Id": "0",
+                    "Show_Id": "0",
+                    "Labelling": "Y",
+                    "Component_Size": "25",
+                    "Component_Type": "text",
+                    "Component_Align": "Left",
+                    "Component_Label": "Last_Name",
+                    "component_value": "",
+                    "Label_Display_name": "Last Name",
+                    "Component_Font_Size": 14,
+                    "Component_Help_Text": "Enter Last Name as per 10th certificate.",
+                    "Component_Mandatory": 0,
+                    "Component_Read_Only": 0,
+                    "Component_Is_Visible": 1,
+                    "Component_List_values": 1,
+                    "Component_Compare_With": "0",
+                    "Component_Condition_Type": [
+                        {
+                            "id": [
+                                "uppercase",
+                                "120",
+                                "data",
+                                "data",
+                                "1",
+                                "==",
+                                "data",
+                                "data",
+                                "1",
+                                "component",
+                                "data",
+                                "this",
+                                "0",
+                                "",
+                                null
+                            ]
+                        },
+                        {
+                            "id": [
+                                "alphabate",
+                                "120",
+                                "data",
+                                "data",
+                                "1",
+                                "==",
+                                "data",
+                                "data",
+                                "1",
+                                "component",
+                                "data",
+                                "this",
+                                "0",
+                                "",
+                                null
+                            ]
+                        }
+                    ],
+                    "Component_Compare_Message": "0",
+                    "group_component_mapping_ID": 120,
+                    "Component_Compare_Condition": null,
+                    "Component_Condition_Perform_On": "0"
+                },
+                {
+                    "Hide_Id": "0",
+                    "Show_Id": "0",
+                    "Labelling": "Y",
+                    "Component_Size": "50",
+                    "Component_Type": "text",
+                    "Component_Align": "Left",
+                    "Component_Label": "Mother_s_Name",
+                    "component_value": "",
+                    "Label_Display_name": "Mother's Name",
+                    "Component_Font_Size": 14,
+                    "Component_Help_Text": "Enter Mother's Name",
+                    "Component_Mandatory": 1,
+                    "Component_Read_Only": 0,
+                    "Component_Is_Visible": 1,
+                    "Component_List_values": 0,
+                    "Component_Compare_With": "0",
+                    "Component_Condition_Type": [
+                        {
+                            "id": [
+                                "uppercase",
+                                "123",
+                                "data",
+                                "data",
+                                "1",
+                                "==",
+                                "data",
+                                "data",
+                                "1",
+                                "component",
+                                "data",
+                                "this",
+                                "0",
+                                "",
+                                null
+                            ]
+                        },
+                        {
+                            "id": [
+                                "alphabate",
+                                "123",
+                                "data",
+                                "data",
+                                "1",
+                                "==",
+                                "data",
+                                "data",
+                                "1",
+                                "component",
+                                "data",
+                                "this",
+                                "0",
+                                "",
+                                null
+                            ]
+                        }
+                    ],
+                    "Component_Compare_Message": "0",
+                    "group_component_mapping_ID": 123,
+                    "Component_Compare_Condition": null,
+                    "Component_Condition_Perform_On": "0"
+                },
+                {
+                    "Hide_Id": "0",
+                    "Show_Id": "0",
+                    "Labelling": "Y",
+                    "Component_Size": "50",
+                    "Component_Type": "text",
+                    "Component_Align": "Left",
+                    "Component_Label": "Father_s_Name",
+                    "component_value": "",
+                    "Label_Display_name": "Father's/Guardians Name",
+                    "Component_Font_Size": 14,
+                    "Component_Help_Text": "Enter Father's/ Guardian's Name",
+                    "Component_Mandatory": 1,
+                    "Component_Read_Only": 0,
+                    "Component_Is_Visible": 1,
+                    "Component_List_values": 0,
+                    "Component_Compare_With": "0",
+                    "Component_Condition_Type": [
+                        {
+                            "id": [
+                                "uppercase",
+                                "117",
+                                "data",
+                                "data",
+                                "1",
+                                "==",
+                                "data",
+                                "data",
+                                "1",
+                                "component",
+                                "data",
+                                "this",
+                                "0",
+                                "",
+                                null
+                            ]
+                        },
+                        {
+                            "id": [
+                                "alphabate",
+                                "117",
+                                "data",
+                                "data",
+                                "1",
+                                "==",
+                                "data",
+                                "data",
+                                "1",
+                                "component",
+                                "data",
+                                "this",
+                                "0",
+                                "",
+                                null
+                            ]
+                        }
+                    ],
+                    "Component_Compare_Message": "0",
+                    "group_component_mapping_ID": 117,
+                    "Component_Compare_Condition": null,
+                    "Component_Condition_Perform_On": "0"
+                },
+                {
+                    "Hide_Id": "0",
+                    "Show_Id": "0",
+                    "Labelling": "Y",
+                    "Component_Size": "33",
+                    "Component_Type": "date",
+                    "Component_Align": "Left",
+                    "Component_Label": "Date_of_birth",
+                    "component_value": "",
+                    "Label_Display_name": "Date of Birth (As per 10th board certificate)",
+                    "Component_Font_Size": 14,
+                    "Component_Help_Text": "Enter Date of Birth in DD-MM-YYYY format",
+                    "Component_Mandatory": 1,
+                    "Component_Read_Only": 0,
+                    "Component_Is_Visible": 1,
+                    "Component_List_values": 1,
+                    "Component_Compare_With": "0",
+                    "Component_Condition_Type": [
+                        {
+                            "id": [
+                                "adderror",
+                                "1614",
+                                "component",
+                                "year",
+                                "this",
+                                "<",
+                                "data",
+                                "data",
+                                "16",
+                                "component",
+                                "data",
+                                "this",
+                                "0",
+                                "Age should be greater than 16 years.",
+                                null
+                            ]
+                        }
+                    ],
+                    "Component_Compare_Message": "0",
+                    "group_component_mapping_ID": 1614,
+                    "Component_Compare_Condition": null,
+                    "Component_Condition_Perform_On": "0"
+                },
+                {
+                    "Hide_Id": "0",
+                    "Show_Id": "0",
+                    "Labelling": "Y",
+                    "Component_Size": "17",
+                    "Component_Type": "select",
+                    "Component_Align": "Left",
+                    "Component_Label": "Gender",
+                    "component_value": "",
+                    "Label_Display_name": "Gender",
+                    "Component_Font_Size": 14,
+                    "Component_Help_Text": "Select Gender",
+                    "Component_Mandatory": 1,
+                    "Component_Read_Only": 0,
+                    "Component_Is_Visible": 1,
+                    "Component_List_values": 8,
+                    "Component_Compare_With": "0",
+                    "Component_Condition_Type": null,
+                    "Component_Compare_Message": "0",
+                    "group_component_mapping_ID": 119,
+                    "Component_Compare_Condition": null,
+                    "Component_Condition_Perform_On": "0"
+                },
+                {
+                    "Hide_Id": "0",
+                    "Show_Id": "0",
+                    "Labelling": "Y",
+                    "Component_Size": "50",
+                    "Component_Type": "number",
+                    "Component_Align": "Left",
+                    "Component_Label": "AadharNo",
+                    "component_value": "",
+                    "Label_Display_name": "Aadhar Number",
+                    "Component_Font_Size": 14,
+                    "Component_Help_Text": "Enter Aadhar Number",
+                    "Component_Mandatory": 0,
+                    "Component_Read_Only": 0,
+                    "Component_Is_Visible": 1,
+                    "Component_List_values": 1,
+                    "Component_Compare_With": "0",
+                    "Component_Condition_Type": [
+                        {
+                            "id": [
+                                "adderror",
+                                "1640",
+                                "component",
+                                "length",
+                                "this",
+                                "!=",
+                                "data",
+                                "data",
+                                "12",
+                                "component",
+                                "value",
+                                "this",
+                                "0",
+                                "Aadhar Number should be 12 digit",
+                                null
+                            ]
+                        }
+                    ],
+                    "Component_Compare_Message": "0",
+                    "group_component_mapping_ID": 1640,
+                    "Component_Compare_Condition": null,
+                    "Component_Condition_Perform_On": "0"
+                },
+                {
+                    "Hide_Id": "0",
+                    "Show_Id": "0",
+                    "Labelling": "Y",
+                    "Component_Size": "15",
+                    "Component_Type": "text",
+                    "Component_Align": "Left",
+                    "Component_Label": "Country_Code",
+                    "component_value": "India - 91",
+                    "Label_Display_name": " Country Code",
+                    "Component_Font_Size": 14,
+                    "Component_Help_Text": " Country Code",
+                    "Component_Mandatory": 0,
+                    "Component_Read_Only": 1,
+                    "Component_Is_Visible": 1,
+                    "Component_List_values": 31,
+                    "Component_Compare_With": "0",
+                    "Component_Condition_Type": null,
+                    "Component_Compare_Message": "0",
+                    "group_component_mapping_ID": 1065,
+                    "Component_Compare_Condition": null,
+                    "Component_Condition_Perform_On": "0"
+                },
+                {
+                    "Hide_Id": "0",
+                    "Show_Id": "0",
+                    "Labelling": "Y",
+                    "Component_Size": "35",
+                    "Component_Type": "mobile",
+                    "Component_Align": "Left",
+                    "Component_Label": "Mobile_Number",
+                    "component_value": "",
+                    "Label_Display_name": " Mobile Number",
+                    "Component_Font_Size": 14,
+                    "Component_Help_Text": "Enter Mobile Number",
+                    "Component_Mandatory": 1,
+                    "Component_Read_Only": 0,
+                    "Component_Is_Visible": 1,
+                    "Component_List_values": 0,
+                    "Component_Compare_With": "0",
+                    "Component_Condition_Type": [
+                        {
+                            "id": [
+                                "adderror",
+                                "122",
+                                "component",
+                                "length",
+                                "this",
+                                "!=",
+                                "data",
+                                "data",
+                                "10",
+                                "component",
+                                "value",
+                                "this",
+                                "0",
+                                "Please Enter valid Mobile Number",
+                                null
+                            ]
+                        }
+                    ],
+                    "Component_Compare_Message": "0",
+                    "group_component_mapping_ID": 122,
+                    "Component_Compare_Condition": null,
+                    "Component_Condition_Perform_On": "0"
+                },
+                {
+                    "Hide_Id": "0",
+                    "Show_Id": "0",
+                    "Labelling": "Y",
+                    "Component_Size": "50",
+                    "Component_Type": "confirmmobile",
+                    "Component_Align": "Left",
+                    "Component_Label": "Confirm_Mobile_Number",
+                    "component_value": "",
+                    "Label_Display_name": "Confirm Mobile Number",
+                    "Component_Font_Size": 14,
+                    "Component_Help_Text": "Confirm Mobile Number",
+                    "Component_Mandatory": 1,
+                    "Component_Read_Only": 0,
+                    "Component_Is_Visible": 1,
+                    "Component_List_values": 1,
+                    "Component_Compare_With": "0",
+                    "Component_Condition_Type": [
+                        {
+                            "id": [
+                                "adderror",
+                                "113",
+                                "component",
+                                "length",
+                                "this"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+    
+
