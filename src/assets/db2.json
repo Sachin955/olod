@@ -463,11 +463,50 @@
                     "Component_Is_Visible": 1,
                     "Component_List_values": 31,
                     "Component_Compare_With": "0",
-                    "Component_Condition_Type": null,
                     "Component_Compare_Message": "0",
                     "group_component_mapping_ID": 1065,
                     "Component_Compare_Condition": null,
-                    "Component_Condition_Perform_On": "0"
+                    "Component_Condition_Perform_On": "0",
+                    "Component_Condition_Type": [
+                        {
+                          "id": [
+                            "uppercase",
+                            "118",
+                            "data",
+                            "data",
+                            "1",
+                            "==",
+                            "data",
+                            "data",
+                            "1",
+                            "component",
+                            "data",
+                            "this",
+                            "0",
+                            "",
+                            null
+                          ]
+                        },
+                        {
+                          "id": [
+                            "alphabate",
+                            "118",
+                            "data",
+                            "data",
+                            "1",
+                            "==",
+                            "data",
+                            "data",
+                            "1",
+                            "component",
+                            "data",
+                            "this",
+                            "0",
+                            "",
+                            null
+                          ]
+                        }
+                      ]
                 },
                 {
                     "Hide_Id": "0",
