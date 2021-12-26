@@ -7,11 +7,11 @@
   <form id="myForm2" [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
     <div class="row form">
       <div class="col-md-12" *ngFor="let control of dbData">
-        <div [ngSwitch]="control.Type">
+        <div [ngSwitch]="control.Component_Type">
           <div *ngSwitchCase="'input'">
             <div class="">
               <label
-                ><h6>{{ control.Label }} </h6></label
+                ><h6>{{ control.Component_Label }} </h6></label
               >
             </div>
             <div>
@@ -35,7 +35,7 @@
           <div *ngSwitchCase="'password'">
             <div class="">
               <label
-                ><h6>{{ control.Label }}</h6></label
+                ><h6>{{ control.Component_Label }}</h6></label
               >
             </div>
             <div class="">
@@ -64,7 +64,7 @@
           <div *ngSwitchCase="'contact'">
             <div class="">
               <label
-                ><h6>{{ control.Label }}</h6></label
+                ><h6>{{ control.Component_Label }}</h6></label
               >
             </div>
             <div class="">
@@ -92,7 +92,7 @@
           <div *ngSwitchCase="'email'">
             <div class="">
               <label
-                ><h6>{{ control.Label }}</h6></label
+                ><h6>{{ control.Component_Label }}</h6></label
               >
             </div>
             <div class="">
@@ -120,7 +120,7 @@
           <div *ngSwitchCase="'date'">
             <div class="">
               <label
-                ><h6>{{ control.Label }}</h6></label
+                ><h6>{{ control.Component_Label }}</h6></label
               >
             </div>
             <div class="">
@@ -141,11 +141,11 @@
           <div *ngSwitchCase="'radio'">
             <div class="">
               <label
-                ><h6>{{ control.Label }}</h6></label
+                ><h6>{{ control.Component_Label }}</h6></label
               >
             </div>
             <div class="">
-              <label *ngFor="let val of control.value.split(',')">
+              <label *ngFor="let val of control.Component_value.split(',')">
                 <input
                   type="radio"
                   value="{{ val }}"
@@ -159,13 +159,13 @@
           <div *ngSwitchCase="'select'">
             <div class="">
               <label
-                ><h6>{{ control.Label }}</h6></label
+                ><h6>{{ control.Component_Label }}</h6></label
               >
             </div>
             <div class="">
               <select class="form-control" formControlName="state">
                 <option
-                  *ngFor="let val of control.value.split(',')"
+                  *ngFor="let val of control.Component_value.split(',')"
                   value="{{ val }}"
                 >
                   {{ val }}

@@ -18,42 +18,42 @@
         <form class="registration_form" [formGroup]="allInputControls">
           <div class="row">
             <div class="col-md-12" *ngFor="let control of responseData">
-              <div [ngSwitch]="control.Type" class="space">
+              <div [ngSwitch]="control.Component_Type" class="space">
                 <div *ngSwitchCase="'input'">
-                  {{ control.Label }}
+                  {{ control.Component_Label }}
                   <input
                     type="text"
                     class="form-control"
-                    formControlName="{{ control.ID }}"
+                    formControlName="{{ control.Component_ID }}"
                   />
 
                   <div
                     class="validations"
                     *ngIf="
-                      allInputControls.get(control.ID).dirty ||
-                      allInputControls.get(control.ID).touched
+                      allInputControls.get(control.Component_ID).dirty ||
+                      allInputControls.get(control.Component_ID).touched
                     "
                   >
-                    {{ control.Label }} is required
+                    {{ control.Component_Label }} is required
                   </div>
                 </div>
 
                 <div *ngSwitchCase="'password'">
-                  {{ control.Label }}
+                  {{ control.Component_Label }}
                   <input
                     type="password"
                     class="form-control"
-                    formControlName="{{ control.ID }}"
+                    formControlName="{{ control.Component_ID }}"
                   />
 
                   <div
                     class="validations"
                     *ngIf="
-                      allInputControls.get(control.ID).dirty ||
-                      allInputControls.get(control.ID).touched
+                      allInputControls.get(control.Component_ID).dirty ||
+                      allInputControls.get(control.Component_ID).touched
                     "
                   >
-                    {{ control.Label }} is required
+                    {{ control.Component_Label }} is required
                   </div>
                 </div>
               </div>
@@ -90,11 +90,13 @@
               type="submit"
               class="submitBtn btn-lg"
               (click)="submitHandler(allInputControls)"
-              
-              routerLink="/registrationForm"
             >
               Submit
             </button>
+          </div>
+          <br />
+          <div>
+            <a routerLink="/registrationForm">Registration</a>
           </div>
         </form>
       </section>

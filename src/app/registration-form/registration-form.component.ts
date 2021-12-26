@@ -65,11 +65,11 @@ export class RegistrationFormComponent implements OnInit {
     this.responseData.forEach((element: any) => {
       if (element.Required === true) {
         this.allInputControls.addControl(
-          element.ID,
+          element.Component_ID,
           new FormControl('')
         );
       } else {
-        this.allInputControls.addControl(element.ID, new FormControl(''));
+        this.allInputControls.addControl(element.Component_ID, new FormControl(''));
       }
       
     });
