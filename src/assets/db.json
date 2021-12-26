@@ -22,14 +22,14 @@
     
     "ID": "Contact No",
     "Label": "Contact No",
-    "Type": "input",
+    "Type": "contact",
     "value": "",
     "Required": true
   },
   {
     "ID": "Email Id",
     "Label": "Email Id",
-    "Type": "input",
+    "Type": "email",
     "value": "",
     "Required": true
   },
@@ -58,7 +58,14 @@
     "ID": "State",
     "Label": "State",
     "Type": "select",
-    "value": "Bhopal,Jaipur,Delhi,,Surat,Pune",
+    "value": "Bhopal,Jaipur,Delhi,Surat,Pune",
+    "Required": true
+  },
+  {
+    "ID": "checkbox",
+    "Label": "",
+    "Type": "checkbox",
+    "value": "",
     "Required": true
   }
 ]

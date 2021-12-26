@@ -13,11 +13,19 @@ export class RegistrationFormComponent implements OnInit {
   captchaValueTwo: any = Math.floor(Math.random() * 10);
   allInputControls: any;
   totalValue_captcha: any;
-  listItems:Array<string>=[
-    'Home','About Us', 'HelpDesk','Suggestions','FAQs','Contact Us','USER MANUAL','Examinations', 'Operator Login',
-    'Officer Login'
-  ]
-  bannerImage:any="../../assets/images/banner-prikshadgca.jpg"
+  listItems: Array<string> = [
+    'Home',
+    'About Us',
+    'HelpDesk',
+    'Suggestions',
+    'FAQs',
+    'Contact Us',
+    'USER MANUAL',
+    'Examinations',
+    'Operator Login',
+    'Officer Login',
+  ];
+  bannerImage: any = '../../assets/images/banner-prikshadgca.jpg';
   constructor(private httpClient: HttpClient, private _fb: FormBuilder) {}
 
   ngOnInit() {
@@ -27,7 +35,7 @@ export class RegistrationFormComponent implements OnInit {
 
     this.httpClient.get('/assets/db.json').subscribe((data) => {
       this.responseData = data;
-      console.log(this.responseData)
+      // console.log(this.responseData);
       this.registrationFormControl();
     });
   }
@@ -37,21 +45,19 @@ export class RegistrationFormComponent implements OnInit {
     this.captchaValueTwo = Math.floor(Math.random() * 10);
   }
 
-  submitHandler(allInputControls:any,  ) {
- 
+  submitHandler(allInputControls: any) {
     this.totalValue_captcha = this.captchaValueOne + this.captchaValueTwo;
-    
+
     if (
       this.totalValue_captcha ===
       Number(allInputControls.controls.inputCaptcha.value)
     ) {
       alert('Login Successful');
-    } else if (allInputControls.controls.inputCaptcha.value === Number('')) {
+    } else if (allInputControls.controls.inputCaptcha.value === null) {
       alert('Enter Captcha value');
+      allInputControls.preventDefault()
     } else {
       alert('Wrong Captcha Value');
-     
-
     }
   }
 
@@ -60,12 +66,13 @@ export class RegistrationFormComponent implements OnInit {
       if (element.Required === true) {
         this.allInputControls.addControl(
           element.ID,
-          new FormControl('', Validators.required)
+          new FormControl('')
         );
       } else {
         this.allInputControls.addControl(element.ID, new FormControl(''));
       }
-      console.log(this.allInputControls)
+      
     });
+    console.log(this.allInputControls);
   }
 }

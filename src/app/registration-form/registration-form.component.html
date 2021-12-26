@@ -1,5 +1,5 @@
 <div>
-  <img src={{bannerImage}} alt="" class="banner" />
+  <img src="{{ bannerImage }}" alt="" class="banner" />
 </div>
 <div class="d-flex">
   <div class="parent">
@@ -34,7 +34,25 @@
                       allInputControls.get(control.ID).touched
                     "
                   >
-                  
+                    {{ control.Label }} is required
+                  </div>
+                </div>
+
+                <div *ngSwitchCase="'password'">
+                  {{ control.Label }}
+                  <input
+                    type="password"
+                    class="form-control"
+                    formControlName="{{ control.ID }}"
+                  />
+
+                  <div
+                    class="validations"
+                    *ngIf="
+                      allInputControls.get(control.ID).dirty ||
+                      allInputControls.get(control.ID).touched
+                    "
+                  >
                     {{ control.Label }} is required
                   </div>
                 </div>
@@ -72,7 +90,7 @@
               type="submit"
               class="submitBtn btn-lg"
               (click)="submitHandler(allInputControls)"
-            
+              
               routerLink="/registrationForm"
             >
               Submit
@@ -82,6 +100,4 @@
       </section>
     </div>
   </div>
-
-  
 </div>

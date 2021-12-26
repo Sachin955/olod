@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {
   FormBuilder,
-  FormControl,
   FormGroup,
   Validators,
 } from '@angular/forms';
@@ -15,36 +14,44 @@ import {
 export class RegistrationForm2Component implements OnInit {
   dbData: any;
   registrationForm: FormGroup;
+  nameValidation: any;
 
   formTitle: any = 'New Candidate Registration Form';
   constructor(private http: HttpClient, private _fb: FormBuilder) {}
 
   ngOnInit(): void {
     //creating form group
-    this.registrationForm = this._fb.group({});
+    this.registrationForm = this._fb.group({
+      name: ['',[Validators.required, Validators.minLength(3)]],
+     password: ['',[Validators.required, Validators.minLength(6)]],
+     contact: ['',[Validators.required, Validators.pattern("[0-9]{3}-[0-9]{2}-[0-9]{3}")]],
+     email: ['',[Validators.required, Validators.email]],
+     date: ['', Validators.required],
+     gender: [''],
+     city: ['',[Validators.required]],
+     state: ['',[Validators.required]],
+     checkbox:[''],
+     
+     
+
+    });
+
+  
     //api calling
     this.http.get('../../assets/db.json').subscribe((data) => {
       this.dbData = data;
-      this.createFormControl();
+      
     });
   }
   // create formControl dynamically based on dbData
-  createFormControl() {
-    this.dbData.forEach((element: any) => {
-      if (element.Required === true) {
-        this.registrationForm.addControl(
-          element.ID,
-          new FormControl('', Validators.required)
-        );
-      } else {
-        this.registrationForm.addControl(element.ID, new FormControl(''));
-      }
-    });
-    console.log(this.registrationForm.value);
+ 
+
+ 
+  onSubmit(){
+    console.log("kjg")
+    
+    
   }
 
-  registrationSubmit() {
-    
-    alert('Registration successful');
-  }
+  
 } // class end
