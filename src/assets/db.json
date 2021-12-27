@@ -16,6 +16,7 @@
     "Component_Is_Visible": 1,
     "Component_List_values": 7,
     "Component_Compare_With": "0",
+    "Component_Condition_Type": null,
     "Component_Compare_Message": "0",
     "group_component_mapping_ID": 125,
     "Component_Compare_Condition": null,
@@ -24,12 +25,7 @@
     "Component_Label": "Name",
     "Component_Type": "input",
     "component_value": "",
-    "Required": true,
-    "Component_Condition_Type": [
-      {
-        "id": ["adderror", "113", "component", "length", "this"]
-      }
-    ]
+    "Required": true
   },
   {
     "Hide_Id": "0",
@@ -45,55 +41,11 @@
     "Component_Is_Visible": 1,
     "Component_List_values": 1,
     "Component_Compare_With": "0",
-    "Component_ID": "Password",
-    "Component_Label": "Password",
-    "Component_Type": "password",
+    "Component_ID": "email",
+    "Component_Label": "Email Id",
+    "Component_Type": "email",
     "component_value": "",
-    "Required": true,
-    "Component_Condition_Type": [
-      {
-        "id": [
-          "uppercase",
-          "118",
-          "data",
-          "data",
-          "1",
-          "==",
-          "data",
-          "data",
-          "1",
-          "component",
-          "data",
-          "this",
-          "0",
-          "",
-          null
-        ]
-      },
-      {
-        "id": [
-          "alphabate",
-          "118",
-          "data",
-          "data",
-          "1",
-          "==",
-          "data",
-          "data",
-          "1",
-          "component",
-          "data",
-          "this",
-          "0",
-          "",
-          null
-        ]
-      }
-    ],
-    "Component_Compare_Message": "0",
-    "group_component_mapping_ID": 118,
-    "Component_Compare_Condition": null,
-    "Component_Condition_Perform_On": "0"
+    "Required": true
   },
   {
     "Hide_Id": "0",
@@ -139,9 +91,9 @@
     "group_component_mapping_ID": 125,
     "Component_Compare_Condition": null,
     "Component_Condition_Perform_On": "0",
-    "Component_ID": "Email Id",
-    "Component_Label": "Email Id",
-    "Component_Type": "email",
+    "Component_ID": "Password",
+    "Component_Label": "Password",
+    "Component_Type": "password",
     "Component_value": "",
     "Component_Required": true
   },

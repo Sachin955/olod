@@ -19,23 +19,13 @@
           <div class="row">
             <div class="col-md-12" *ngFor="let control of responseData">
               <div [ngSwitch]="control.Component_Type" class="space">
-                <div *ngSwitchCase="'input'">
+                <div *ngSwitchCase="'email'">
                   {{ control.Component_Label }}
                   <input
-                    type="text"
+                    type="email"
                     class="form-control"
-                    formControlName="{{ control.Component_ID }}"
+                    formControlName="email"
                   />
-
-                  <div
-                    class="validations"
-                    *ngIf="
-                      allInputControls.get(control.Component_ID).dirty ||
-                      allInputControls.get(control.Component_ID).touched
-                    "
-                  >
-                    {{ control.Component_Label }} is required
-                  </div>
                 </div>
 
                 <div *ngSwitchCase="'password'">
@@ -43,18 +33,8 @@
                   <input
                     type="password"
                     class="form-control"
-                    formControlName="{{ control.Component_ID }}"
+                    formControlName="password"
                   />
-
-                  <div
-                    class="validations"
-                    *ngIf="
-                      allInputControls.get(control.Component_ID).dirty ||
-                      allInputControls.get(control.Component_ID).touched
-                    "
-                  >
-                    {{ control.Component_Label }} is required
-                  </div>
                 </div>
               </div>
             </div>

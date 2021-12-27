@@ -2,7 +2,6 @@
   <div class="form-title">
     <h3>{{ formTitle }}</h3>
   </div>
-  <br />
 
   <form id="myForm2" [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
     <div class="row form">
@@ -11,7 +10,7 @@
           <div *ngSwitchCase="'input'">
             <div class="">
               <label
-                ><h6>{{ control.Component_Label }} </h6></label
+                ><h6>{{ control.Component_Label }}</h6></label
               >
             </div>
             <div>
@@ -101,6 +100,14 @@
                 class="form-control"
                 formControlName="email"
               />
+              <!-- <div formArrayName="alternateEmails" >
+                <input type="email" class="form-control">
+
+              </div> -->
+              <div>
+                <button type="button" (click)="addAlternateEmails()">Add Emails</button>
+              </div>
+
             </div>
             <div
               *ngIf="
@@ -108,9 +115,10 @@
                 registrationForm.get('email').touched
               "
             >
-              <small *ngIf="registrationForm.get('email').errors?.required"
-                >*Eamil is required</small
+              <small *ngIf="registrationForm.get('email').errors?.email"
+                >*Email required</small
               >
+
               <small *ngIf="registrationForm.get('email').errors?.email"
                 >*invalid Email</small
               >
@@ -155,39 +163,40 @@
               </label>
             </div>
           </div>
-
-          <div *ngSwitchCase="'select'">
-            <div class="">
-              <label
-                ><h6>{{ control.Component_Label }}</h6></label
-              >
-            </div>
-            <div class="">
-              <select class="form-control" formControlName="state">
-                <option
-                  *ngFor="let val of control.Component_value.split(',')"
-                  value="{{ val }}"
+          <div >
+            <div *ngSwitchCase="'select'">
+              <div class="">
+                <label
+                  ><h6>{{ control.Component_Label }}</h6></label
                 >
-                  {{ val }}
-                </option>
-              </select>
-              <div
-                *ngIf="
-                  registrationForm.get('state').invalid &&
-                  registrationForm.get('state').touched
-                "
-              >
-                <small *ngIf="registrationForm.get('state').errors?.required">
-                  *select state
-                </small>
+              </div>
+              <div class="">
+                <select class="form-control" formControlName="state">
+                  <option
+                    *ngFor="let val of control.Component_value.split(',')"
+                    value="{{ val }}"
+                  >
+                    {{ val }}
+                  </option>
+                </select>
+                <div
+                  *ngIf="
+                    registrationForm.get('state').invalid &&
+                    registrationForm.get('state').touched
+                  "
+                >
+                  <small *ngIf="registrationForm.get('state').errors?.required">
+                    *select state
+                  </small>
+                </div>
               </div>
             </div>
           </div>
           <br />
           <div *ngSwitchCase="'checkbox'">
-            <div class="d-flex">
+            <div class="undertaking_checkbox">
               <input type="checkbox" formControlName="checkbox" />
-              <div>I hereby confirm the identity and address.</div>
+              <label>I hereby confirm the identity and address.</label>
             </div>
           </div>
         </div>
@@ -197,7 +206,6 @@
     <div class="row">
       <button
         type="submit"
-        [disabled]="!registrationForm.valid"
         class="submit-btn"
       >
         Submit

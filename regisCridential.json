@@ -1,0 +1,75 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    },
+    {
+      "name": "",
+      "password": "",
+      "contact": "",
+      "email": "",
+      "subscribe": false,
+      "date": "",
+      "gender": "",
+      "city": "",
+      "state": "",
+      "checkbox": "",
+      "alternateEmails": [],
+      "id": 2
+    },
+    {
+      "name": "",
+      "password": "123456",
+      "contact": "",
+      "email": "ss@dd",
+      "subscribe": false,
+      "date": "",
+      "gender": "",
+      "city": "",
+      "state": "",
+      "checkbox": "",
+      "alternateEmails": [],
+      "id": 3
+    },
+    {
+      "name": "",
+      "password": "dsafdasdfs",
+      "contact": "",
+      "email": "asf@asfds",
+      "subscribe": false,
+      "date": "",
+      "gender": "",
+      "city": "",
+      "state": "",
+      "checkbox": "",
+      "alternateEmails": [],
+      "id": 4
+    },
+    {
+      "name": "",
+      "password": "123456",
+      "contact": "",
+      "email": "ff@rr",
+      "subscribe": false,
+      "date": "",
+      "gender": "",
+      "city": "",
+      "state": "",
+      "checkbox": "",
+      "alternateEmails": [],
+      "id": 5
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

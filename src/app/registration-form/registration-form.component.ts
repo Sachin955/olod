@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration-form',
@@ -11,7 +17,7 @@ export class RegistrationFormComponent implements OnInit {
   responseData: any;
   captchaValueOne: any = Math.floor(Math.random() * 10);
   captchaValueTwo: any = Math.floor(Math.random() * 10);
-  allInputControls: any;
+  allInputControls: FormGroup;
   totalValue_captcha: any;
   listItems: Array<string> = [
     'Home',
@@ -26,17 +32,21 @@ export class RegistrationFormComponent implements OnInit {
     'Officer Login',
   ];
   bannerImage: any = '../../assets/images/banner-prikshadgca.jpg';
-  constructor(private httpClient: HttpClient, private _fb: FormBuilder) {}
+  constructor(
+    private http: HttpClient,
+    private _fb: FormBuilder,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.allInputControls = this._fb.group({
+      email: [''],
+      password: [''],
       inputCaptcha: [],
     });
 
-    this.httpClient.get('/assets/db.json').subscribe((data) => {
+    this.http.get('/assets/db.json').subscribe((data) => {
       this.responseData = data;
-      // console.log(this.responseData);
-      this.registrationFormControl();
     });
   }
 
@@ -55,24 +65,27 @@ export class RegistrationFormComponent implements OnInit {
       alert('Login Successful');
     } else if (allInputControls.controls.inputCaptcha.value === null) {
       alert('Enter Captcha value');
-      allInputControls.preventDefault()
     } else {
       alert('Wrong Captcha Value');
     }
-  }
-
-  registrationFormControl() {
-    this.responseData.forEach((element: any) => {
-      if (element.Required === true) {
-        this.allInputControls.addControl(
-          element.Component_ID,
-          new FormControl('')
+    this.http.get('http://localhost:3000/comments').subscribe((res) => {
+      console.log(typeof res);
+      const newResponse = Object.keys(res);
+      const user = newResponse;
+      console.log(user,"dsfadssafasadsf")
+      user.find((a: any) => {
+        return (
+          a.email === this.allInputControls.value.email &&
+          a.password === this.allInputControls.value.password
         );
+      });
+      if (user) {
+        alert('Login Success!!');
+        this.allInputControls.reset();
+        this.router.navigate(['registrationForm']);
       } else {
-        this.allInputControls.addControl(element.Component_ID, new FormControl(''));
+        alert('user not found!');
       }
-      
     });
-    console.log(this.allInputControls);
   }
 }
