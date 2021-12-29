@@ -100,14 +100,6 @@
                 class="form-control"
                 formControlName="email"
               />
-              <!-- <div formArrayName="alternateEmails" >
-                <input type="email" class="form-control">
-
-              </div> -->
-              <div>
-                <button type="button" (click)="addAlternateEmails()">Add Emails</button>
-              </div>
-
             </div>
             <div
               *ngIf="
@@ -115,10 +107,6 @@
                 registrationForm.get('email').touched
               "
             >
-              <small *ngIf="registrationForm.get('email').errors?.email"
-                >*Email required</small
-              >
-
               <small *ngIf="registrationForm.get('email').errors?.email"
                 >*invalid Email</small
               >
@@ -163,7 +151,7 @@
               </label>
             </div>
           </div>
-          <div >
+          <div>
             <div *ngSwitchCase="'select'">
               <div class="">
                 <label
@@ -204,12 +192,7 @@
     </div>
     <br />
     <div class="row">
-      <button
-        type="submit"
-        class="submit-btn"
-      >
-        Submit
-      </button>
+      <button type="submit" class="submit-btn">Submit</button>
     </div>
   </form>
 </div>

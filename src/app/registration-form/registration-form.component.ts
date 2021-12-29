@@ -40,8 +40,8 @@ export class RegistrationFormComponent implements OnInit {
 
   ngOnInit() {
     this.allInputControls = this._fb.group({
-      email: [''],
-      password: [''],
+      email: ['',[Validators.required]],
+      password: ['',[Validators.required]],
       inputCaptcha: [],
     });
 
@@ -68,12 +68,10 @@ export class RegistrationFormComponent implements OnInit {
     } else {
       alert('Wrong Captcha Value');
     }
-    this.http.get('http://localhost:3000/comments').subscribe((res) => {
+    this.http.get<any>('http://localhost:3000/signup').subscribe((res) => {
       console.log(typeof res);
-      const newResponse = Object.keys(res);
-      const user = newResponse;
-      console.log(user,"dsfadssafasadsf")
-      user.find((a: any) => {
+      
+      const user = res.find((a: any) => {
         return (
           a.email === this.allInputControls.value.email &&
           a.password === this.allInputControls.value.password
@@ -82,7 +80,7 @@ export class RegistrationFormComponent implements OnInit {
       if (user) {
         alert('Login Success!!');
         this.allInputControls.reset();
-        this.router.navigate(['registrationForm']);
+        this.router.navigate(['AME_Experience']);
       } else {
         alert('user not found!');
       }

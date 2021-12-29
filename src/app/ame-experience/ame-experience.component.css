@@ -1,0 +1,13 @@
+
+.container {
+margin-top: 20px;
+
+}
+.ame_experience_header {
+    background-color: skyblue;
+    border-radius: 4px;
+    text-align: center;
+color:white;
+font-weight: bold;
+font-size: large;
+}

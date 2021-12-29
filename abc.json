@@ -1,0 +1,108 @@
+{
+  "signup": [
+    {
+      "name": "sachin goel",
+      "password": "123456",
+      "contact": "9899752155",
+      "email": "sachin@goel.com",
+      "subscribe": false,
+      "date": "2021-12-10",
+      "gender": "Male",
+      "city": "",
+      "state": "Jaipur",
+      "checkbox": true,
+      "id": 1
+    },
+    {
+      "name": "",
+      "password": "",
+      "contact": "",
+      "email": "",
+      "subscribe": false,
+      "date": "",
+      "gender": "",
+      "city": "",
+      "state": "",
+      "checkbox": "",
+      "id": 2
+    },
+    {
+      "name": "",
+      "password": "",
+      "contact": "",
+      "email": "",
+      "subscribe": false,
+      "date": "",
+      "gender": "",
+      "city": "",
+      "state": "",
+      "checkbox": "",
+      "id": 3
+    },
+    {
+      "name": "",
+      "password": "",
+      "contact": "",
+      "email": "",
+      "subscribe": false,
+      "date": "",
+      "gender": "",
+      "city": "",
+      "state": "",
+      "checkbox": "",
+      "id": 4
+    },
+    {
+      "name": "",
+      "password": "",
+      "contact": "",
+      "email": "",
+      "subscribe": false,
+      "date": "",
+      "gender": "",
+      "city": "",
+      "state": "",
+      "checkbox": "",
+      "id": 5
+    },
+    {
+      "name": "",
+      "password": "",
+      "contact": "",
+      "email": "",
+      "subscribe": false,
+      "date": "",
+      "gender": "",
+      "city": "",
+      "state": "",
+      "checkbox": "",
+      "id": 6
+    },
+    {
+      "name": "",
+      "password": "",
+      "contact": "",
+      "email": "",
+      "subscribe": false,
+      "date": "",
+      "gender": "",
+      "city": "",
+      "state": "",
+      "checkbox": "",
+      "id": 7
+    },
+    {
+      "name": "ffg",
+      "password": "123456",
+      "contact": "1234569870",
+      "email": "sachin@gmail.com",
+      "subscribe": false,
+      "date": "2021-12-11",
+      "gender": "Male",
+      "city": "",
+      "state": "Bhopal",
+      "checkbox": true,
+      "id": 8
+    }
+  ]
+}

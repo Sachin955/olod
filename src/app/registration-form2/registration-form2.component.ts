@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-registration-form2',
   templateUrl: './registration-form2.component.html',
@@ -13,28 +14,22 @@ export class RegistrationForm2Component implements OnInit {
   nameValidation: any;
   formTitle: any = 'New Candidate Registration Form';
 
-  get email() {
-    return this.registrationForm.get('email');
-  }
-
-  get alternateEmails() {
-    return this.registrationForm.get('alternateEmails') as FormArray;
-  }
-
-  addAlternateEmails(){
-    this.alternateEmails.push(this._fb.control(''))
-  }
+ 
+get name(){
+  return this.registrationForm.get('name');
+}
+ 
   constructor(private http: HttpClient, private _fb: FormBuilder,
     private router:Router) {}
 
   ngOnInit(): void {
     //creating form group
     this.registrationForm = this._fb.group({
-      name: ['', [Validators.required, Validators.minLength(3)]],
+      name: ['', [Validators.required, Validators.minLength(3),Validators.pattern("[A-Za-z{8}] ")]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       contact: [
         '',
-        [Validators.required, Validators.pattern('[0-9]{3}-[0-9]{2}-[0-9]{3}')],
+        [Validators.required],
       ],
       email: ['', [Validators.required, Validators.email]],
       subscribe: [false],
@@ -43,7 +38,7 @@ export class RegistrationForm2Component implements OnInit {
       city: ['', [Validators.required]],
       state: ['', [Validators.required]],
       checkbox: [''],
-      alternateEmails: this._fb.array([]),
+      
     });
 
     //api calling
@@ -67,7 +62,7 @@ export class RegistrationForm2Component implements OnInit {
   // create formControl dynamically based on dbData
   onSubmit() {
     console.log(this.registrationForm.value);
-      this.http.post('http://localhost:3000/comments',this.registrationForm.value)
+      this.http.post<any>('http://localhost:3000/signup',this.registrationForm.value)
       .subscribe(res=>{
         alert('successful register');
         this.registrationForm.reset()

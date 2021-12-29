@@ -27,6 +27,20 @@
                     formControlName="email"
                   />
                 </div>
+                
+                <div
+                *ngIf="
+                  allInputControls.get('email').invalid &&
+                  allInputControls.get('email').touched
+                "
+              >
+                
+                
+              </div>
+
+
+
+
 
                 <div *ngSwitchCase="'password'">
                   {{ control.Component_Label }}
@@ -70,13 +84,14 @@
               type="submit"
               class="submitBtn btn-lg"
               (click)="submitHandler(allInputControls)"
+              [disabled] = "!allInputControls.valid"
             >
               Submit
             </button>
           </div>
           <br />
           <div>
-            <a routerLink="/registrationForm">Registration</a>
+            <a routerLink="/registrationForm">New Registration</a>
           </div>
         </form>
       </section>
