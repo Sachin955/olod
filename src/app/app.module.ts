@@ -9,6 +9,7 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { RegistrationForm2Component } from './registration-form2/registration-form2.component';
 import { AmeExperienceComponent } from './ame-experience/ame-experience.component';
+import { RegistrationForm3Component } from './registration-form3/registration-form3.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AmeExperienceComponent } from './ame-experience/ame-experience.componen
     CaptchaComponent,
     LoginComponent,
     RegistrationForm2Component,
-    AmeExperienceComponent
+    AmeExperienceComponent,
+    RegistrationForm3Component
   ],
   imports: [
     BrowserModule,
