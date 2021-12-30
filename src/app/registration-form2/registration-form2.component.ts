@@ -15,7 +15,7 @@ export class RegistrationForm2Component implements OnInit {
   formTitle: any = 'New Candidate Registration Form';
 
   constructor(private http: HttpClient, private _fb: FormBuilder,
-    private router:Router) {}
+   ) {}
 
   ngOnInit(): void {
     //creating form group
@@ -35,20 +35,17 @@ export class RegistrationForm2Component implements OnInit {
 
   // create formControl dynamically based on dbData
   onSubmit() {
-    console.log(this.registrationForm.value);
-      this.http.post<any>('http://localhost:3000/signup',this.registrationForm.value)
-      .subscribe(res=>{
-        alert('successful register');
-        this.registrationForm.reset()
-        this.router.navigate(['login'])
-      })
+    console.log(this.registrationForm);
+     
   }
 
   createFormControl(){
     this.dbData.forEach((element:any) => {
-      this.registrationForm.addControl(element.Component_Type, new FormControl(''));
-      console.log(element.Component_Type)
-      
+      if(element.Component_Required === true){
+      this.registrationForm.addControl(element.Component_ID, new FormControl('',Validators.required));
+    }else {
+      this.registrationForm.addControl(element.ID, new FormControl(''));
+    }
     });
   }
 

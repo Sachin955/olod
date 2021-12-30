@@ -69,7 +69,7 @@ export class RegistrationFormComponent implements OnInit {
       alert('Wrong Captcha Value');
     }
     this.http.get<any>('http://localhost:3000/signup').subscribe((res) => {
-      console.log(typeof res);
+      console.log(res);
       
       const user = res.find((a: any) => {
         return (
