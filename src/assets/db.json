@@ -73,31 +73,7 @@
     "Component_value": "",
     "Component_Required": true
   },
-  {
-    "Hide_Id": "0",
-    "Show_Id": "0",
-    "Labelling": "Y",
-    "Component_Size": "15",
-    "Component_Align": "Left",
-    "Label_Display_name": " Title",
-    "Component_Font_Size": 14,
-    "Component_Help_Text": "Select Title",
-    "Component_Mandatory": 1,
-    "Component_Read_Only": 0,
-    "Component_Is_Visible": 1,
-    "Component_List_values": 7,
-    "Component_Compare_With": "0",
-    "Component_Condition_Type": null,
-    "Component_Compare_Message": "0",
-    "group_component_mapping_ID": 125,
-    "Component_Compare_Condition": null,
-    "Component_Condition_Perform_On": "0",
-    "Component_ID": "confirmPassword",
-    "Component_Label": "confirmPassword",
-    "Component_Type": "password",
-    "Component_value": "",
-    "Component_Required": true
-  },
+  
   {
     "Hide_Id": "0",
     "Show_Id": "0",

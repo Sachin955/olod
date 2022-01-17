@@ -110,8 +110,8 @@
 .submitBtn:hover {
   background-color: skyblue;
   color: white;
- 
+}
 
-  
-  
+small {
+  color: red;
 }

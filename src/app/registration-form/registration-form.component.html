@@ -15,8 +15,8 @@
         <h3>Officer Login</h3>
       </div>
       <section>
-        <form class="registration_form" [formGroup]="allInputControls">
-          <div class="row">
+        <form class="registration_form" [formGroup]="login">
+          <div class="">
             <div class="col-md-12" *ngFor="let control of responseData">
               <div [ngSwitch]="control.Component_Type" class="space">
                 <div *ngSwitchCase="'email'">
@@ -26,15 +26,16 @@
                     class="form-control"
                     formControlName="email"
                   />
+                  <div *ngIf="login.get('email').touched">
+                    <small *ngIf="login.get('email').errors?.required">
+                      {{ control.Component_Label }} is required.
+                    </small>
+                    <small *ngIf="login.get('email').errors?.email">
+                      {{ control.Component_Label }} is not correct.
+                    </small>
+                  </div>
                 </div>
-                
-                <div
-                *ngIf="
-                  allInputControls.get('email').invalid &&
-                  allInputControls.get('email').touched
-                "
-              >         
-              </div>
+
                 <div *ngSwitchCase="'password'">
                   {{ control.Component_Label }}
                   <input
@@ -42,6 +43,12 @@
                     class="form-control"
                     formControlName="password"
                   />
+                  <div *ngIf="login.get('password').touched">
+                    <small *ngIf="login.get('password').errors?.required">
+                      {{ control.Component_Label }} is required.
+                    </small>
+                    
+                  </div>
                 </div>
               </div>
             </div>
@@ -76,15 +83,15 @@
             <button
               type="submit"
               class="submitBtn btn-lg"
-              (click)="submitHandler(allInputControls)"
-              [disabled] = "!allInputControls.valid"
+              (click)="submitHandler()"
+              
             >
               Submit
             </button>
           </div>
           <br />
           <div>
-            <a routerLink="/registrationForm">New Registration</a>
+            <a routerLink="/registration3">New Registration</a>
           </div>
         </form>
       </section>

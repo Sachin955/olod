@@ -155,6 +155,13 @@
                <input type={{control.Component_Type}} name="{{control.Component_ID}}">
                {{val}} 
              </label>
+             <div *ngIf="registrationForm.get(control.Component_ID).touched">
+               <small *ngIf="registrationForm.get(control.Component_ID).required">
+                 
+                Gender is mandatory
+               </small> 
+
+             </div>
               
               
             </div>
@@ -221,7 +228,7 @@
     </div>
     <br />
     <div class="row">
-      <button type="submit" class="submit-btn" [disabled]="registrationForm.valid">Submit</button>
+      <button type="submit" class="submit-btn" >Submit</button>
     </div>
   </form>
 </div>

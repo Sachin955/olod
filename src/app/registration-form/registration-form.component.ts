@@ -17,7 +17,7 @@ export class RegistrationFormComponent implements OnInit {
   responseData: any;
   captchaValueOne: any = Math.floor(Math.random() * 10);
   captchaValueTwo: any = Math.floor(Math.random() * 10);
-  allInputControls: FormGroup;
+  login: FormGroup;
   totalValue_captcha: any;
   listItems: Array<string> = [
     'Home',
@@ -39,10 +39,11 @@ export class RegistrationFormComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.allInputControls = this._fb.group({
-      email: ['',[Validators.required]],
-      password: ['',[Validators.required]],
+    this.login = this._fb.group({
+      email: ['sachin@gmail.com', [Validators.required, Validators.email]],
+      password: ['123456', Validators.required],
       inputCaptcha: [],
+      userLogin: [],
     });
 
     this.http.get('/assets/db.json').subscribe((data) => {
@@ -55,35 +56,41 @@ export class RegistrationFormComponent implements OnInit {
     this.captchaValueTwo = Math.floor(Math.random() * 10);
   }
 
-  submitHandler(allInputControls: any) {
-    this.totalValue_captcha = this.captchaValueOne + this.captchaValueTwo;
-
-    if (
-      this.totalValue_captcha ===
-      Number(allInputControls.controls.inputCaptcha.value)
-    ) {
-      alert('Login Successful');
-    } else if (allInputControls.controls.inputCaptcha.value === null) {
-      alert('Enter Captcha value');
-    } else {
-      alert('Wrong Captcha Value');
-    }
-    this.http.get<any>('http://localhost:3000/signup').subscribe((res) => {
-      console.log(res);
-      
-      const user = res.find((a: any) => {
-        return (
-          a.email === this.allInputControls.value.email &&
-          a.password === this.allInputControls.value.password
-        );
+  submitHandler() {
+    // console.log(this.login.invalid)
+    if (this.login.valid) {
+      this.http.get<any>('http://localhost:3000/signUp').subscribe((res) => {
+        console.log(res);
+        const user = res.find((element:any) => {
+          console.log(element,"elements")
+          return element.email === this.login.value.email && element.password === this.login.value.password
+          
+        });
+        if (user) {
+          alert('Login success');
+          this.login.reset();
+          this.router.navigate(['AME_Experience']);
+        } else {
+          alert('user not found');
+        }
       });
-      if (user) {
-        alert('Login Success!!');
-        this.allInputControls.reset();
-        this.router.navigate(['AME_Experience']);
-      } else {
-        alert('user not found!');
-      }
-    });
+    } else {
+      alert('please fill all fields');
+    }
   }
+
+  // this.totalValue_captcha = this.captchaValueOne + this.captchaValueTwo;
+
+  // if (
+  //   this.totalValue_captcha ===
+  //   Number(login.controls.inputCaptcha.value)
+  // ) {
+  //   alert('Login Successful');
+  // } else if (login.controls.inputCaptcha.value === null) {
+  //   alert('Enter Captcha value');
+  // } else {
+  //   alert('Wrong Captcha Value');
+  // }
+
+  // });
 }

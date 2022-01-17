@@ -1,3 +1,184 @@
-<div>
-    form3
+<div class="container">
+  <div class="form-title"></div>
+
+  <form id="myForm2" [formGroup]="registrationForm">
+    <div class="row form">
+      <div class="col-md-12" *ngFor="let control of apiData">
+        <div [ngSwitch]="control.Component_Type">
+          <div *ngSwitchCase="'text'">
+            <div class="label">
+              <label
+                ><h6>{{ control.Component_Label }}</h6></label
+              >
+            </div>
+            <div>
+              <input
+                type="{{ control.Component_Type }}"
+                class="form-control"
+                formControlName="name"
+              />
+              <div
+                *ngIf="
+                  registrationForm.get('name').touched &&
+                  !registrationForm.get('name').valid
+                "
+              >
+                <small *ngIf="registrationForm.get('name').errors?.required">
+                  {{ control.Component_Label }} is required
+                </small>
+                <small *ngIf="registrationForm.get('name').errors?.minlength">
+                  {{ control.Component_Label }} must be atleast 3 character.
+                </small>
+              </div>
+            </div>
+          </div>
+
+        
+            <div *ngSwitchCase="'password'">
+              <div class="label">
+                <label
+                  ><h6>{{ control.Component_Label }}</h6></label
+                >
+              </div>
+              <div>
+                <input
+                  type="{{ control.Component_Type }}"
+                  class="form-control"
+                  formControlName="password"
+                />
+                <div
+                  *ngIf="
+                    registrationForm.get('password').touched &&
+                    !registrationForm.get('password').valid
+                  "
+                >
+                  <small
+                    *ngIf="
+                      registrationForm.get('password').errors
+                        ?.required
+                    "
+                  >
+                    {{ control.Component_Label }} is required
+                  </small>
+                  <small
+                    *ngIf="
+                      registrationForm.get('password').errors
+                        ?.minlength
+                    "
+                  >
+                    {{ control.Component_Label }} must be atleast 6 character.
+                  </small>
+                </div>
+              </div>
+            </div>
+         
+
+          <div *ngSwitchCase="'email'">
+            <div class="label">
+              <label
+                ><h6>{{ control.Component_Label }}</h6></label
+              >
+            </div>
+            <div>
+              <input
+                type="{{ control.Component_Type }}"
+                class="form-control"
+                formControlName="email"
+              />
+            </div>
+
+            <div
+              *ngIf="
+                registrationForm.get('email').touched &&
+                !registrationForm.get('email').valid
+              "
+            >
+              <small *ngIf="registrationForm.get('email').errors?.required">
+                {{ control.Component_Label }} is required
+              </small>
+              <small *ngIf="registrationForm.get('email').errors?.email">
+                Enter {{ control.Component_Label }} is not correct
+              </small>
+            </div>
+
+            <div formArrayName="addEmail">
+              <div
+                *ngFor="
+                  let addEmail of registrationForm.get('addEmail').controls;
+                  let i = index
+                "
+              >
+                <input
+                  type="email"
+                  class="form-control"
+                  formControlName="{{ i }}"
+                />
+              </div>
+              <div
+                *ngIf="
+                  registrationForm.get('addEmail').touched &&
+                  !registrationForm.get('addEmail').valid
+                "
+              >
+                <small *ngIf="registrationForm.get('email').errors?.required">
+                  Added {{ control.Component_Label }} is also required
+                </small>
+
+                <small *ngIf="registrationForm.get('email').errors?.email">
+                  added {{ control.Component_Label }} is not correct
+                </small>
+              </div>
+            </div>
+
+            <div>
+              <button (click)="onAddEmail()">+ Add Email</button>
+            </div>
+          </div>
+
+
+          <div formGroupName="userAddress">
+            <div *ngSwitchCase="'select'">
+              <div class="label">
+                <label
+                  ><h6>{{ control.Component_Label }}</h6></label
+                >
+              </div>
+              <div>
+                <select formControlName="city" class="form-control">
+                  <option value="0">Select</option>
+                  <option
+                    *ngFor="let val of control.Component_value.split(',')"
+                    value={{val}}
+                  >
+                    {{ val }}
+                  </option>
+                </select>
+              </div>
+              <div
+                *ngIf="
+                  registrationForm.get('userAddress.city').touched &&
+                  !registrationForm.get('userAddress.city').valid
+                "
+              >
+                <small *ngIf="registrationForm.get('userAddress.city').errors?.required">
+                  {{ control.Component_Label }} is required.
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <button
+        type="submit"
+        [disabled]="!registrationForm.valid"
+        class="submit-btn"
+        (click)="onSubmit()"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
 </div>

@@ -10,6 +10,8 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationForm2Component } from './registration-form2/registration-form2.component';
 import { AmeExperienceComponent } from './ame-experience/ame-experience.component';
 import { RegistrationForm3Component } from './registration-form3/registration-form3.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { RegistrationForm3Component } from './registration-form3/registration-fo
     LoginComponent,
     RegistrationForm2Component,
     AmeExperienceComponent,
-    RegistrationForm3Component
+    RegistrationForm3Component,
+    UserDashboardComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
